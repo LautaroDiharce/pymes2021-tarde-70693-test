@@ -10,7 +10,11 @@ import { ArticulosFamiliasComponent } from './components/articulos-familias/arti
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
 import { ArticulosComponent } from './components/articulos/articulos.component';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbPaginationModule,
+  NgbModalModule,
+} from '@ng-bootstrap/ng-bootstrap';
+import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
 
 @NgModule({
   imports: [
@@ -19,6 +23,7 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     ReactiveFormsModule,
     NgbPaginationModule,
+    NgbModalModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/inicio', pathMatch: 'full' },
       { path: 'inicio', component: InicioComponent },
@@ -33,7 +38,9 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     ArticulosFamiliasComponent,
     MenuComponent,
     ArticulosComponent,
+    ModalDialogComponent,
   ],
+  entryComponents: [ModalDialogComponent],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
 })
