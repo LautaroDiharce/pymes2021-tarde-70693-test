@@ -31,6 +31,7 @@ import { ArticulosComponent } from './components/articulos/articulos.component';
     InicioComponent,
     ArticulosFamiliasComponent,
     MenuComponent,
+    ArticulosComponent,
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
