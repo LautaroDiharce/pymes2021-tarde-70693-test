@@ -102,7 +102,14 @@
       <div class="col">
         <span class="label label-default">Registros: {{ RegistrosTotal }}</span>
       </div>
-      <div class="col text-center">Directiva paginador aqui</div>
+      <ngb-pagination
+        [(page)]="Pagina"
+        (pageChange)="Buscar()"
+        [pageSize]="10"
+        [maxSize]="10"
+        [collectionSize]="RegistrosTotal"
+      ></ngb-pagination>
+
       <div class="col text-right">
         <button
           type="button"
@@ -136,6 +143,15 @@
       </label>
       <div class="col-sm-6">
         <input type="text" class="form-control" formControlName="Nombre" />
+        <span
+          class="text-danger"
+          *ngIf="
+            FormRegistro.controls.Nombre.errors &&
+            FormRegistro.controls.Nombre.errors.required
+          "
+        >
+          Dato requerido.
+        </span>
       </div>
     </div>
     <!--campo precio-->
@@ -150,6 +166,15 @@
           class="form-control"
           formControlName="Precio"
         />
+        <span
+          class="text-danger"
+          *ngIf="
+            FormRegistro.controls.Nombre.errors &&
+            FormRegistro.controls.Nombre.errors.required
+          "
+        >
+          Dato requerido.
+        </span>
       </div>
     </div>
     <!--campo stock-->
@@ -164,6 +189,15 @@
           class="form-control"
           formControlName="Stock"
         />
+        <span
+          class="text-danger"
+          *ngIf="
+            FormRegistro.controls.Nombre.errors &&
+            FormRegistro.controls.Nombre.errors.required
+          "
+        >
+          Dato requerido.
+        </span>
       </div>
     </div>
     <!--campo codigodebarra-->
@@ -180,6 +214,16 @@
         />
       </div>
     </div>
+    <span
+      class="text-danger"
+      *ngIf="
+        FormRegistro.controls.Nombre.errors &&
+        FormRegistro.controls.Nombre.errors.required
+      "
+    >
+      Dato requerido.
+    </span>
+
     <!--campo idarticulofamilia-->
     <div class="form-group row">
       <label
@@ -201,6 +245,15 @@
             {{ opt.Nombre }}
           </option>
         </select>
+        <span
+          class="text-danger"
+          *ngIf="
+            FormRegistro.controls.Nombre.errors &&
+            FormRegistro.controls.Nombre.errors.required
+          "
+        >
+          Dato requerido.
+        </span>
       </div>
     </div>
     <!--campo fechaalta-->
@@ -214,6 +267,15 @@
           name="FechaAlta"
           formControlName="FechaAlta"
         />
+        <span
+          class="text-danger"
+          *ngIf="
+            FormRegistro.controls.Nombre.errors &&
+            FormRegistro.controls.Nombre.errors.required
+          "
+        >
+          Dato requerido.
+        </span>
       </div>
     </div>
     <!--campo activo-->
