@@ -23,6 +23,7 @@ import { ArticulosComponent } from './components/articulos/articulos.component';
       { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
       { path: '**', redirectTo: '/inicio', pathMatch: 'full' },
       { path: 'articulos', component: ArticulosComponent },
+      { path: '**', redirectTo: '/inicio', pathMatch: 'full' },
     ]),
   ],
   declarations: [
