@@ -142,7 +142,11 @@
         Nombre <span class="text-danger">*</span>
       </label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" formControlName="Nombre" />
+        <input
+          type="text"
+          class="form-control text-uppercase"
+          formControlName="Nombre"
+        />
         <span
           class="text-danger"
           *ngIf="
@@ -151,6 +155,15 @@
           "
         >
           Dato requerido.
+        </span>
+        <span
+          class="text-danger"
+          *ngIf="
+            FormRegistro.controls.Nombre.errors?.minlength ||
+            FormRegistro.controls.Nombre.errors?.maxlength
+          "
+        >
+          Dato texto, 4 a 55 caracteres.
         </span>
       </div>
     </div>
@@ -166,6 +179,13 @@
           class="form-control"
           formControlName="Precio"
         />
+        <span
+          class="text-danger"
+          *ngIf="FormRegistro.controls.Stock.errors?.pattern"
+        >
+          Dato numérico, 1 a 7 dígitos.
+        </span>
+
         <span
           class="text-danger"
           *ngIf="
@@ -276,6 +296,12 @@
         >
           Dato requerido.
         </span>
+        <span
+          class="text-danger"
+          *ngIf="FormRegistro.controls.FechaAlta.errors?.pattern"
+        >
+          Dato fecha, formato dd/mm/aaaa.
+        </span>
       </div>
     </div>
     <!--campo activo-->
@@ -316,7 +342,11 @@
   </div>
 
   <!--texto: Revisar los datos ingresados...-->
-  <div id="divMsjFormRegistro" class="row alert alert-danger" *ngIf="false">
-    <i class="fas fa-exclamation-sign"></i>{{ Mensajes['RD'] }}
+  <div
+    id="divMsjFormRegistro"
+    class="row alert alert-danger"
+    *ngIf="FormRegistro.invalid"
+  >
+    > <i class="fas fa-exclamation-sign"></i>{{ Mensajes['RD'] }}
   </div>
 </form>
