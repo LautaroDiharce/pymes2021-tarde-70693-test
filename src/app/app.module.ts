@@ -10,6 +10,7 @@ import { ArticulosFamiliasComponent } from './components/articulos-familias/arti
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
 import { ArticulosComponent } from './components/articulos/articulos.component';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { ArticulosComponent } from './components/articulos/articulos.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbPaginationModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/inicio', pathMatch: 'full' },
       { path: 'inicio', component: InicioComponent },
